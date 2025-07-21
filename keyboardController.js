@@ -1,7 +1,8 @@
 /* this is where you'd change out what the keyboard is controlling */
 /* as its imported AFTER script.js where polySynth is defined I can assign it here */
 
-let keyboardSynth = polySynth;
+let keyboardSynth = sampler;
+//let keyboardSynth = polySynth;
 
 /* get all the keys */
 

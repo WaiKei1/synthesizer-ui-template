@@ -23,6 +23,19 @@ let synthPresets = [
 }
 ];
 
+/* Melodica sample from below */
+/* lowd.wav by pinevoc -- https://freesound.org/s/473629/ -- License: Creative Commons 0 */
+
+///////// Sampler
+let sampler = new Tone.Sampler({
+    urls: {
+        D2: "mel_low_d.wav"
+    },
+    baseUrl: "./assets/audioSamples/"
+}).toDestination();
+
+
+
 ///////// Synthesizer
 let polySynth = new Tone.PolySynth(Tone.Synth, {
   oscillator: {
