@@ -41,11 +41,14 @@
     <!-- Intro Modal popup -->
     <!-- Websites are subject to an autoplay policy, so need user interaction before making sound -->
     <!-- In this case we use the interaction of closing the modal to trigger loading the synth -->
-    <!-- https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Autoplay -->    
+    <!-- https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Autoplay --> 
+
     <dialog id="introDialog">
       <p>This synthesizer will make some noise, please check your system's volume setting.</p>
       <button id="dialogCloseButton" autofocus>OK</button>
     </dialog>
+
+    <input type="range" id="frequencySlider" min="0" max="20000" />
 
     <!-- Keyboard Controller -->
     <div class="keyboardCont">
