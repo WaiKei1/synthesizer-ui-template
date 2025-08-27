@@ -23,7 +23,8 @@ let polySynth = new Tone.PolySynth(Tone.Synth, {
 /* 
 let sampler = new Tone.Sampler({
     urls: {
-        D2: "mel_low_d.wav"
+        D2: "mel_low_d.wav",
+        C3: "four.m4a",
     },
     baseUrl: "./assets/audioSamples/"
 });
@@ -37,7 +38,10 @@ const filter = new Tone.Filter(20000, "lowpass");
 
 const distortion = new Tone.Distortion(0);
 
+const reverb = new Tone.Reverb(2);
+
 const meter = new Tone.Meter();
+meter.smoothing = 0.1;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////// Functions
@@ -47,7 +51,7 @@ const meter = new Tone.Meter();
 // This gets triggered when the user closes the dialog element
 // It will connect the polysynth => filter => distortion => meter => audio output
 function toneInit() {
-  polySynth.chain(filter, distortion, meter, Tone.Destination);
+  polySynth.chain(filter, distortion, reverb, meter, Tone.Destination);
   // This is an alternative statement if the sampler is instead chosen : the only difference is the variable name
   // The sampler above must be uncommented for this to work, as well as the declaration on line 3 of keyboardController.js
   // sampler.chain(filter, distortion, meter, Tone.Destination);
